@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Rocket League</title>
+<style>
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+/* Menú */
+nav {
+    background: linear-gradient(135deg, #5b21b6, #3b0a7c);
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 12px;
+    border-radius: 15px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+nav ul li button:hover {
+    background: #22c55e;
+    color: #0f172a;
+}
+nav ul li button.activo {
+    background: #facc15;
+    color: #0f172a;
+}
+
+/* Header */
+header {
+    max-width: 900px;
+    margin: 0 auto 25px auto;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #e5e7eb;
+    padding: 18px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Contenedor de secciones */
+.contenido {
+    display: none;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #111827;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    color: #e5e7eb;
+}
+.contenido.activo {
+    display: block;
+}
+
+/* Imágenes */
+.contenido img {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: 3px solid #2563eb;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+}
+
+/* Títulos */
+h2 {
+    color: #f8fafc;
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+h3 {
+    color: #c7d2fe;
+    margin-top: 18px;
+    font-size: 1.3rem;
+}
+
+/* Texto y listas */
+p, li {
+    color: #e5e7eb;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+li {
+    margin-bottom: 8px;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+a:hover {
+    text-decoration: underline;
+}
+a.abrir {
+    color: #2563eb;
+}
+a.descargar {
+    color: #16a34a;
+}
+
+/* Botón ir al inicio */
+button.ir-inicio {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #f8fafc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button.ir-inicio:hover {
+    background: #1e40af;
+}
+</style>
+</head>
+<body>
+
+<header>Rocket League - Guía Completa</header>
+
+<nav>
+<ul>
+    <li><button class="activo" onclick="mostrar('inicio',this)">Inicio</button></li>
+    <li><button onclick="mostrar('miembros',this)">Miembros</button></li>
+    <li><button onclick="mostrar('mecanicas',this)">Mejores mecánicas</button></li>
+    <li><button onclick="mostrar('usadas',this)">Más usadas</button></li>
+    <li><button onclick="mostrar('otra',this)">Otra página</button></li>
+</ul>
+</nav>
+
+<!-- SECCIÓN INICIO -->
+<section id="inicio" class="contenido activo">
+<img src="imagenes/rocketleague.jpg" alt="Rocket League">
+<h2>¿Qué es Rocket League?</h2>
+<p>Rocket League es un videojuego que combina fútbol con coches propulsados por cohetes. Es competitivo, rápido y lleno de mecánicas avanzadas que permiten jugadas espectaculares.</p>
+
+<h3>Mecánicas populares</h3>
+<ul>
+<li>Flip Reset - Recupera el salto mientras estás en el aire.</li>
+<li>Air Dribble - Control del balón en pleno vuelo.</li>
+<li>Ceiling Shot - Disparo potente desde el techo de la arena.</li>
+<li>Wave Dash - Movimiento rápido aprovechando la física del vehículo.</li>
+<li>Half Flip - Giro rápido para revertir la dirección del coche.</li>
+</ul>
+
+<!-- Botón ir al inicio (aunque estamos en inicio, sirve para consistencia) -->
+<button class="ir-inicio" onclick="mostrar('inicio', document.querySelector('nav button'))">Ir al inicio</button>
+</section>
+
+<!-- SECCIÓN MIEMBROS -->
+<section id="miembros" class="contenido">
+<img src="imagenes/jugadores.jpg" alt="Jugadores destacados">
+<h2>Jugadores destacados</h2>
+<h3>JZR</h3><p>Famoso por popularizar el Flip Reset en competiciones profesionales.</p>
+<h3>Squishy Muffinz</h3><p>Reconocido por su habilidad en el Ceiling Shot y jugadas creativas.</p>
+<h3>Fairy Peak</h3><p>Especialista en Air Dribble, dominando el control del balón en el aire.</p>
+<h3>Musty</h3><p>Creador del icónico Musty Flick, combinación de estilo y precisión.</p>
+<h3>Okhalid</h3><p>Jugador experto en 1v1, conocido por su defensa impecable y remates rápidos.</p>
+</section>
+
+<!-- SECCIÓN MECÁNICAS -->
+<section id="mecanicas" class="contenido">
+<img src="imagenes/flipreset.jpg" alt="Flip Reset">
+<h2>Mejores mecánicas</h2>
+<h3>Flip Reset</h3><p>Permite recuperar el salto en el aire, lo que abre infinitas posibilidades de ataque y control del balón.</p>
+<h3>Ceiling Shot</h3><p>Disparo potente desde el techo de la arena que sorprende al rival y permite goles espectaculares.</p>
+<h3>Air Dribble</h3><p>Control preciso del balón en pleno vuelo para avanzar hacia la portería enemiga y mantener la posesión.</p>
+</section>
+
+<!-- SECCIÓN MÁS USADAS -->
+<section id="usadas" class="contenido">
+<img src="imagenes/mejoress.jpg" alt="Mecánicas usadas">
+<h2>Mecánicas más usadas</h2>
+<ul>
+<li>Power Shot - Disparo potente para marcar goles rápidos.</li>
+<li>Wave Dash - Movimiento rápido para mejorar la velocidad del coche.</li>
+<li>Half Flip - Giro instantáneo para revertir dirección sin perder tiempo.</li>
+<li>Aerial - Vuelo controlado para interceptar o disparar el balón.</li>
+<li>Shadow Defense - Técnica defensiva posicionando el coche entre rival y portería.</li>
+</ul>
+</section>
+
+<!-- SECCIÓN OTRA PÁGINA -->
+<section id="otra" class="contenido">
+<h2>Información adicional sobre Rocket League</h2>
+<p>Bienvenidos a la sección de información extra de Rocket League. Aquí se profundiza en la historia, curiosidades y estrategias avanzadas que todo jugador debería conocer.</p>
+
+<h3>Historia</h3>
+<p>Rocket League fue lanzado por Psyonix en 2015 y rápidamente se convirtió en un fenómeno competitivo. Su combinación única de deportes y vehículos con propulsores creó un estilo de juego innovador que sigue creciendo en popularidad.</p>
+
+<h3>Curiosidades</h3>
+<ul>
+<li>La inspiración original vino de un mod llamado Supersonic Acrobatic Rocket-Powered Battle-Cars.</li>
+<li>Se han organizado torneos con premios de varios millones de dólares.</li>
+<li>Muchos jugadores profesionales comenzaron jugando en partidas casuales en línea.</li>
+</ul>
+
+<h3>Estrategias y consejos</h3>
+<ul>
+<li>Practica mecánicas básicas antes de intentar Flip Reset o Air Dribble.</li>
+<li>Observa partidas profesionales para aprender posicionamiento y timing.</li>
+<li>Coordina con tu equipo usando comunicación constante y planificación de jugadas.</li>
+</ul>
+
+<p style="margin-top:20px; font-size:16px;">
+Al pinchar 
+<a class="abrir" href="https://docs.google.com/document/d/1CpS_uMA8IaNjlc5ovrIAkHGs0CaS2TKSPtILZHkWK2c/edit?usp=sharing" target="_blank">
+aquí
+</a> obtendrás más información. <br>
+O puedes 
+<a class="descargar" href="https://docs.google.com/document/d/1CpS_uMA8IaNjlc5ovrIAkHGs0CaS2TKSPtILZHkWK2c/export?format=docx">
+descargar el documento
+</a>.
+</p>
+
+<!-- Botón ir al inicio -->
+<button class="ir-inicio" onclick="mostrar('inicio', document.querySelector('nav button'))">Ir al inicio</button>
+</section>
+
+<script>
+function mostrar(id,btn){
+    document.querySelectorAll('.contenido').forEach(s=>s.classList.remove('activo'));
+    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('activo'));
+    document.getElementById(id).classList.add('activo');
+    if(btn) btn.classList.add('activo');
+}
+</script>
+
+</body>
+</html>
+
+
